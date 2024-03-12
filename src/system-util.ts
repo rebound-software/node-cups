@@ -1,5 +1,4 @@
 import childProcess from 'child_process'
-//const nodeProcess = require('node:process');
 
 export type CommandResult = {
   stdout: string
