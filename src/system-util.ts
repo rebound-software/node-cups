@@ -11,7 +11,7 @@ export const spawn = async (
   data?: Buffer,
 ): Promise<CommandResult> => {
   return new Promise((resolve, reject) => {
-    const process = childProcess.spawn(cmd, args, { env: nodeProcess.env.PATH })
+    const process = childProcess.spawn(cmd, args, { env: nodeProcess.env })
     const chunks: Buffer[] = []
     const errorChunks: Buffer[] = []
 
