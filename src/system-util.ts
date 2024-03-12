@@ -1,4 +1,4 @@
-import childProcess from 'child_process'
+//import childProcess from 'child_process'
 const nodeProcess = require('node:process');
 
 export type CommandResult = {
@@ -11,7 +11,7 @@ export const spawn = async (
   data?: Buffer,
 ): Promise<CommandResult> => {
   return new Promise((resolve, reject) => {
-    const process = childProcess.spawn(cmd, args, { env: nodeProcess.env })
+    const process = childProcess.spawn('/usr/bin/'+cmd, args/*, { env: nodeProcess.env }*/)
     const chunks: Buffer[] = []
     const errorChunks: Buffer[] = []
 
