@@ -1,4 +1,5 @@
 import childProcess from 'child_process'
+const nodeProcess = require('node:process');
 
 export type CommandResult = {
   stdout: string
@@ -10,7 +11,7 @@ export const spawn = async (
   data?: Buffer,
 ): Promise<CommandResult> => {
   return new Promise((resolve, reject) => {
-    const process = childProcess.spawn(cmd, args, { env: process.env.PATH })
+    const process = childProcess.spawn(cmd, args, { env: nodeProcess.env.PATH })
     const chunks: Buffer[] = []
     const errorChunks: Buffer[] = []
 
